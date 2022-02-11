@@ -4,8 +4,8 @@ const Button = (props)=> (
     <button type="button" onClick={props.onClick}>{props.text}</button>
 );
 
-const StatisticsLine = ({text,value}) =>(
-    <li>{text} {value}</li>
+const StatisticLine = ({text,value}) =>(
+    <p>{text} {value}</p>
 );
 
 
@@ -17,12 +17,12 @@ const Statistics = ({result}) => {
     }
     return (
         <div>
-            <StatisticsLine text="good" value={good}/>
-            <StatisticsLine text="neutral" value={neutral}/>
-            <StatisticsLine text="bad" value={bad}/>
-            <StatisticsLine text="all" value={all}/>
-            <StatisticsLine text="average" value={(good+bad*-1)/all}/>
-            <StatisticsLine text="positive" value={`${(good/all)*100} %`}/>
+            <StatisticLine text="good" value={good}/>
+            <StatisticLine text="neutral" value={neutral}/>
+            <StatisticLine text="bad" value={bad}/>
+            <StatisticLine text="all" value={all}/>
+            <StatisticLine text="average" value={(good+bad*-1)/all}/>
+            <StatisticLine text="positive" value={`${(good/all)*100} %`}/>
         </div>
     );
 };
