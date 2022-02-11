@@ -1,0 +1,9 @@
+note over browser:
+input 'good course' and click submit
+browser execute submit event handler
+that render new added note to note list
+and send XHR request to submit new added note
+end note
+
+browser->server: HTTP POST {content: "good course", date: "2022-02-11T07:16:46.611Z"} https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+server->browser: 201 Response with { "message": "note created"} 
