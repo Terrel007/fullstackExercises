@@ -8,14 +8,23 @@ const StatisticsItem = ({type,count}) =>(
     <li>{type} {count}</li>
 );
 
+
 const Statistics = ({result}) => {
     const [good,neutral,bad] = result;
+    const all = good+neutral+bad;
     return (
         <div>
             <h2>statistics</h2>
             <StatisticsItem type="good" count={good}/>
             <StatisticsItem type="neutral" count={neutral}/>
             <StatisticsItem type="bad" count={bad}/>
+            <StatisticsItem type="all" count={all}/>
+            { all > 0 &&
+                <>
+                    <StatisticsItem type="average" count={(good+bad*-1)/all}/>
+                    <StatisticsItem type="positive" count={`${(good/all)*100} %`}/>
+                </>}
+            
         </div>
     );
 };
